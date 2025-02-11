@@ -1,0 +1,365 @@
+﻿@{
+    ViewData["Title"] = "About ";
+}
+
+<head>
+    <!-- animated Liberary -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+          integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link Wow Js Library -->
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+
+
+    <!-- ========================= BreadCrumb================================ -->
+
+    <div class="BreadcrumbStart">
+        <div class="BreadcrumbS_Wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 class="bradcaump-title">About Us</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" asp-controller="Home" asp-action="index">Home</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb-item active">About</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===================================== About Section Start=================================-->
+
+    <div class="aboutourstor container ">
+        <div class="text-about wow slideInLeft" data-wow-duration="1s">
+            <h1>about our <span>store</span> </h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nostrum adipisci voluptas vel iure
+                aliquam dolorum, nisi eos maxime iste facere voluptatibus dignissimos voluptatem fuga. Corporis,
+                sint. Perspiciatis, iusto sunt?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aut fugit dolor consequatur
+                recusandae laudantium sapiente nemo accusamus magnam ratione alias nam rerum, vero odio saepe natus
+                quas distinctio voluptas.
+            </p>
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Shop" role="button">Shop Now</a>
+        </div>
+        <div class="image-about wow fadeIn" data-wow-delay="1s">
+            <img src="~/images/slider/2dd8dfca4f.jpg" alt="slider">
+        </div>
+    </div>
+
+
+
+    <section class="whatweoffer container m-5 ms-auto ">
+        <div class="row features-small pt-4 ms-auto">
+            <h2 class="text-center text-uppercase font-weight-bold mb-5 pt-4 spacing wow fadeIn" data-wow-delay="0.2s">
+                <strong>What We Offer</strong>
+            </h2>
+
+            <!--Grid column-->
+            <div class="col-md-4 mb-4">
+                <div class="col-1 col-md-2 float-start">
+                    <i class="fas fa-globe red-text-2 fa-2x"></i>
+                </div>
+                <div class="col-10 col-md-9 col-lg-10 float-end">
+                    <h4 class="font-weight-bold dark-grey-text">Free Shipping</h4>
+                    <p class="grey-text">We Offer Free Shipping to Any Place inside Mansoura.</p>
+                </div>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-md-4 mb-4">
+                <div class="col-1 col-md-2 float-start">
+                    <i class="fas fa-home red-text-2 fa-2x"></i>
+                </div>
+                <div class="col-10 col-md-9 col-lg-10 float-end">
+                    <h4 class="font-weight-bold dark-grey-text">Secure Payment</h4>
+                    <p class="grey-text">Secure Payment Methods , no Need to Worry about your Wallet .</p>
+                </div>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-md-4 mb-4">
+                <div class="col-1 col-md-2 float-start">
+                    <i class="fas fa-phone red-text-2 fa-2x"></i>
+                </div>
+                <div class="col-10 col-md-9 col-lg-10 float-end">
+                    <h4 class="font-weight-bold dark-grey-text">Online Support</h4>
+                    <p class="grey-text">Customer Service 24/Hours Everyday Except Friday and Saturday.</p>
+                </div>
+            </div>
+            <!--Grid column-->
+
+        </div>
+    </section>
+
+
+
+    <section id="team" class=" wow">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
+                <h3>our team</h3>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 custom-col">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <img src="~/images/Team/face1.jpg" class="img-fluid" alt="Team">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Esraa</h4>
+                                <span> Fronend Developer</span>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                    <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <img src="~/images/Team/face2.jpg" class="img-fluid" alt="Team">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Menna Allah</h4>
+                                <span>Backend Developer</span>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                    <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="fade-up" data-aos-delay="300">
+                        <img src="~/images/Team/face3.jpg" class="img-fluid" alt="Team">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Mohamed</h4>
+                                <span>Frondend Developer</span>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                    <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <img src="~/images/Team/face5.jpg" class="img-fluid" alt="Team">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Osama</h4>
+                                <span>Backend Developer</span>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                    <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <img src="~/images/Team/face6.jpg" class="img-fluid" alt="Team">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Ahmed</h4>
+                                <span>Backend Developer</span>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                    <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <img src="~/images/Team/face4.jpg" class="img-fluid" alt="Team">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Nada</h4>
+                                <span>Instructor</span>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                    <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Wow Js Liberary -->
+    <script src="js/wow.min.js"></script>
+    <!-- Link aos Liberary -->
+    <script src="js/vendor/aos.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+
+
+@* @{
+    ViewData["Title"] = "من نحن";
+}
+
+<head>
+    <!-- مكتبة التحريك -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+          integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- مكتبة Wow Js -->
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body dir="rtl">
+
+    <!-- ========================= شريط التنقل ================================== -->
+
+    <div class="BreadcrumbStart">
+        <div class="BreadcrumbS_Wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 class="bradcaump-title">من نحن</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" asp-controller="Home" asp-action="index">الرئيسية</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb-item active">من نحن</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================== قسم من نحن ================================= -->
+
+    <div class="aboutourstor container">
+        <div class="text-about wow slideInLeft" data-wow-duration="1s">
+            <h1>عن <span>متجرنا</span></h1>
+            <p>
+                لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد. تم استخدام لوريم إيبسوم كنص نموذجي في الصناعات لعقود.
+            </p>
+            <p>
+                نص إضافي يُستخدم كشرح للتفاصيل حول المتجر وخدماته. يمكنك التعديل عليه بما يناسب محتواك الخاص.
+            </p>
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Shop" role="button">تسوق الآن</a>
+        </div>
+        <div class="image-about wow fadeIn" data-wow-delay="1s">
+            <img src="~/images/slider/2dd8dfca4f.jpg" alt="صورة">
+        </div>
+    </div>
+
+    <!-- ===================================== ماذا نقدم ================================= -->
+
+    <section class="whatweoffer container m-5 ms-auto">
+        <div class="row features-small pt-4 ms-auto">
+            <h2 class="text-center text-uppercase font-weight-bold mb-5 pt-4 spacing wow fadeIn" data-wow-delay="0.2s">
+                <strong>ماذا نقدم</strong>
+            </h2>
+
+            <!-- الشحن المجاني -->
+            <div class="col-md-4 mb-4">
+                <div class="col-1 col-md-2 float-start">
+                    <i class="fas fa-globe red-text-2 fa-2x"></i>
+                </div>
+                <div class="col-10 col-md-9 col-lg-10 float-end">
+                    <h4 class="font-weight-bold dark-grey-text">شحن مجاني</h4>
+                    <p class="grey-text">نوفر خدمة الشحن المجاني لأي مكان داخل المنصورة.</p>
+                </div>
+            </div>
+
+            <!-- الدفع الآمن -->
+            <div class="col-md-4 mb-4">
+                <div class="col-1 col-md-2 float-start">
+                    <i class="fas fa-home red-text-2 fa-2x"></i>
+                </div>
+                <div class="col-10 col-md-9 col-lg-10 float-end">
+                    <h4 class="font-weight-bold dark-grey-text">دفع آمن</h4>
+                    <p class="grey-text">طرق دفع آمنة دون القلق بشأن محفظتك.</p>
+                </div>
+            </div>
+
+            <!-- دعم العملاء -->
+            <div class="col-md-4 mb-4">
+                <div class="col-1 col-md-2 float-start">
+                    <i class="fas fa-phone red-text-2 fa-2x"></i>
+                </div>
+                <div class="col-10 col-md-9 col-lg-10 float-end">
+                    <h4 class="font-weight-bold dark-grey-text">دعم العملاء</h4>
+                    <p class="grey-text">خدمة العملاء متاحة 24 ساعة يومياً ما عدا الجمعة والسبت.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================== فريق العمل ================================= -->
+
+    <section id="team" class="wow">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
+                <h3>فريق العمل</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 custom-col">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <img src="~/images/Team/face1.jpg" class="img-fluid" alt="فريق العمل">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>إسراء</h4>
+                                <span>مطور واجهات أمامية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- باقي أعضاء الفريق -->
+            </div>
+        </div>
+    </section>
+
+    <!-- مكتبات جافا سكريبت -->
+    <script src="js/wow.min.js"></script>
+    <script src="js/vendor/aos.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+ *@

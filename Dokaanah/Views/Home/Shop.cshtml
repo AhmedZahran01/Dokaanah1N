@@ -1,0 +1,106 @@
+﻿ 
+
+@model List<Product> ;
+@{
+        ViewData["Title"] = "shop";
+    string currentCategory = ViewData["catName"]?.ToString() ?? "all";
+     
+    var listpro = (List<Product>)ViewBag.allproductsHere;
+}
+
+    <!-- =====================================[BreadCrumb Section]======================================================= -->
+
+    <div class="BreadcrumbStart">
+        <div class="BreadcrumbS_Wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 class="bradcaump-title">Shop</h2>
+                            <nav class="bradcaump-inner">
+                            <a class="breadcrumb-item" asp-controller="Home" asp-action="index">Home</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb-item active">Contact</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================[Product]================================================== -->
+
+
+    <div class="wrappper">
+        <div class="category-filter container">
+                <div class="title">
+                    <h1>Featured Products</h1>
+
+                    @if (listpro.Count == 0 )
+                    {
+                        <br /> <br /> <br /> <br />
+                <h2 style="font-size:49px; color:Red;text-align:center;font-weight: 800; letter-spacing: 1px;">
+                            There is No Product
+                       </h2>
+                         <br /> <br /> <br /> <br />
+
+                    }
+                </div>
+
+        
+        @*  <div class="filter-btns mb-5">
+                    <button type="button" class="filter-btn @(currentCategory == "all" ? "active" : "")" data-filter="all">All</button> 
+                </div> *@
+
+            <div class="row filter-items">
+           
+            
+            @foreach (var prodCt in listpro)
+                {
+                <div class="col-sm-12 col-md-6 col-lg-4 filter-item all @(prodCt.Name.Trim().ToLower())" data-price="@prodCt.Price">
+                        <div class="shopCentre">
+                            <div class="product-item hover-effect-slide">
+                                <div class="image-holder position-relative">
+                                    <img src="@prodCt.ImgUrl" alt="@prodCt.Name" class="product-image img-fluid">
+                                    <a asp-controller="Product" asp-action="Details" asp-route-id="@prodCt.Id" class="btn-icon btn-eye-con">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+
+
+
+                                <a onclick="alert('Your item is add to your card')" asp-controller="CartProduct" asp-action="AddProductToCarttoshop" asp-route-id="@prodCt.Id" class="btn btn-dark w-100 mt-2
+                                                      rounded-3 add-cart-btnnn">
+
+                                    Add to cart
+                                </a>
+                            </div>
+                                <div class="product-content position-relative">
+                                    <h5 class="product-name text-uppercase fs-5 mt-3">
+                                        <a asp-controller="Product" asp-action="Details" asp-route-id="@prodCt.Id">@prodCt.Name</a>
+                                    </h5>
+                                    <div class="product-price">
+                                        <span class="new-price">$@prodCt.Price</span>
+                                        <span class="old-price">$@((prodCt.Price) * (1.75))</span>
+                                    </div>
+                                    <div class="product-star">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            
+        </div>
+    </div>
+
+
+
+

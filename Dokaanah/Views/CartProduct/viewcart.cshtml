@@ -1,0 +1,165 @@
+﻿@model Dokaanah.PresentationLayer.ViewModels.shoppingCartViewModel
+
+@{
+    ViewData["Title"] = "Cart Page";
+}
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="table-cart ">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Products</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <tr data-product-id="@item.Product.Id">
+                            <th scope="row">
+                                <div class="d-flex align-items-center">
+                                    <img src="@item.Product.ImgUrl" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                                </div>
+                            </th>
+                            <td>
+                                <p class="mb-0 mt-4">@item.Product.Name</p>
+                            </td>
+                            <td>
+                                <p class="mb-0 mt-4">$ @item.Product.Price</p>
+                            </td>
+                            <td>
+                                <div class="input-group quantity mt-4" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-minus rounded-circle bg-light border" aria-label="Minus">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input name="Quantity" type="text" class="form-control form-control-sm text-center border-0" value="@item.Quantity" readonly>
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-plus rounded-circle bg-light border" aria-label="Plus">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="mb-0 mt-4 item-total-price">$@(item.Product.Price * item.Quantity)</p>
+                            </td>
+                            <td>
+                                <button class="btn btn-md mt-4 btn-delete" aria-label="delete product">
+                                    <i class="fa-solid fa-circle-minus fa-xl"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex justify-content-between align-items-center maxWidthButtons">
+            <a asp-controller="Home" asp-action="Shop" class="btn btn-dark text-nowrap cart-go-shopping-page" role="button">
+                <i class="fa-regular fa-circle-left pe-1"></i>
+                Continue Shopping
+            </a>
+            @*      <button class="btn btn-dark text-nowrap cart-go-shopping-page" aria-label="Delete All">
+            <i class="fa-solid fa-trash pe-1"></i>
+            Delete All
+            </button> *@
+
+
+            <div class="cart-totalprice-page d-flex align-items-center">
+                <p>Total Price: <strong id="total-price">$@Model.TotalPrice?.ToString("F2")</strong></p>
+            </div>
+        </div>
+        <hr>
+
+        <div class="d-grid col-6 mx-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="CartProduct" asp-action="checkout" class="go-check-out-btn btn btn-danger text-nowrap">
+                    Checkout
+                </a>
+            }
+            else
+            {
+                <a onclick="alert('You must log in or register, please')" asp-controller="Home" asp-action="index" class="go-check-out-btn btn btn-danger text-nowrap magic-button">
+                    <span>Checkout</span>
+
+                </a>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            function updateCart(productId, quantity) {
+                $.ajax({
+                    url: '@Url.Action("UpdateCartProductQuantity", "CartProduct")',
+                    type: 'POST',
+                    data: {
+                        productId: productId,
+                        quantity: quantity
+                    },
+                    success: function (response) {
+                        location.reload(); // Reload the page to update the cart display
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+
+            function updateTotalPrice() {
+                let totalPrice = 0;
+                $('#cart-items tr').each(function () {
+                    const price = parseFloat($(this).find('.item-total-price').text().substring(1));
+                    totalPrice += price;
+                });
+                $('#total-price').text('$' + totalPrice.toFixed(2));
+            }
+
+            $('.btn-plus').click(function () {
+                const row = $(this).closest('tr');
+                const productId = row.data('product-id');
+                const quantityInput = row.find('input[name="Quantity"]');
+                let quantity = parseInt(quantityInput.val());
+                quantity++;
+                quantityInput.val(quantity);
+                updateCart(productId, quantity);
+            });
+
+            $('.btn-minus').click(function () {
+                const row = $(this).closest('tr');
+                const productId = row.data('product-id');
+                const quantityInput = row.find('input[name="Quantity"]');
+                let quantity = parseInt(quantityInput.val());
+                if (quantity > 1) {
+                    quantity--;
+                    quantityInput.val(quantity);
+                    updateCart(productId, quantity);
+                }
+            });
+
+            $('.btn-delete').click(function () {
+                const row = $(this).closest('tr');
+                const productId = row.data('product-id');
+                updateCart(productId, 0); // Send 0 quantity to remove the item
+            });
+
+            updateTotalPrice();
+        });
+    </script>
+}
+
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+
+

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Dokaanah.Models.Product>
+
+@{
+    ViewData["Title"] = "RandomProducts";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-12 filter-item all women" data-price="400">
+                <div class="shopCentre">
+                    <div class="product-item hover-effect-slide">
+                        <div class="image-holder position-relative">
+                            <img src="@product.ImgUrl" alt="Blouse" class="product-image img-fluid">
+                            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="btn-icon btn-eye-con">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <span class="btn btn-dark w-100 mt-2 rounded-3 add-cart-btnnn">Add to cart</span>
+                        </div>
+                        <div class="product-content position-relative">
+                            <h5 class="product-name text-uppercase fs-5 mt-3">
+                                <p>@product.Name</p>
+                            </h5>
+                            <div class="product-price">
+                                <span class="new-price">$@product.Price</span>
+                                <span class="old-price">$450</span>
+                            </div>
+                            <div class="product-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

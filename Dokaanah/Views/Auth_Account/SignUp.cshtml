@@ -1,0 +1,42 @@
+﻿@model Dokaanah.PresentationLayer.ViewModels.SignUpViewModels
+
+@{
+	ViewData["title"] = "Sign up";
+	Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div class="main-agileinfo">
+	<div class="agileits-top">
+		<form asp-action="SignUp" method="post">
+			<div asp-validation-summary="All" ></div>
+			<input class="text"  asp-for="UserName"  placeholder="username" required="">
+			<input class="text email" asp-for="Email" placeholder="Email" required="">
+			<input class="text" asp-for="Password" placeholder="password" required="">
+			<input class="text w3lpass" asp-for="confirmPassword" placeholder="confirmPassword" required="">
+			<div class="wthree-text">
+				<label class="anim">
+					<input asp-for="IsAgree" class="checkbox" required="">
+					<span>I Agree To The Terms & Conditions</span>
+				</label>
+				<div class="clear"> </div>
+			</div>
+			<input type="submit" value="SIGNUP">
+		</form>
+		<p>Do you have an Account? <a asp-action=""> Login Now!</a></p>
+	</div>
+</div>
+
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+
+@* @section _ValidationScriptsPartial {
+	<partial name="_ValidationScriptsPartial"/>
+} *@
+	
+	
+	@* @{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	} *@
+
+

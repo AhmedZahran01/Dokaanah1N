@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Dokaanah.Models.Product>
+
+@{
+    ViewData["Title"] = "AddToCartProduct";
+}
+
+<div class="BreadcrumbStart">
+    <div class="BreadcrumbS_Wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Cart</h2>
+                        <nav class="bradcaump-inner">
+                            <a class="breadcrumb-item" href="index.html">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb-item active">Cart</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==========================================[Product]================================================== -->
+@foreach (var product in Model)
+{
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="table-cart ">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Products</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="d-flex align-items-center">
+                                    <img src="@product.ImgUrl" class="img-fluid me-5 rounded-circle"
+                                    style="width: 80px; height: 80px;" alt="">
+                                </div>
+                            </th>
+                            <td>
+                                <p class="mb-0 mt-4">"@product.Name"</p>
+                            </td>
+                            <td>
+                                <p class="mb-0 mt-4">(@product.Price) $</p>
+                            </td>
+                            <td>
+                                <div class="input-group quantity mt-4" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-minus rounded-circle bg-light border"
+                                        aria-label="Minus">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm text-center border-0"
+                                    value="1">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-plus rounded-circle bg-light border"
+                                        aria-label="Plus">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="mb-0 mt-4">"@product.Price" $</p>
+                            </td>
+                            <td>
+                                <button class="btn btn-md   mt-4" aria-label="delete product">
+                                    <i class="fa-solid fa-circle-minus fa-xl"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-between align-items-center maxWidthButtons">
+                <a href="shop.html" class="btn btn-dark text-nowrap cart-go-shopping-page" role="button">
+                    <i class="fa-regular fa-circle-left pe-1"></i>
+                    Continue Shopping
+                </a>
+                <button class="btn btn-dark text-nowrap cart-go-shopping-page " aria-label="Delete All">
+                    <i class="fa-solid fa-trash pe-1"></i>
+                    Delete All
+                </button>
+                <div class="cart-totalprice-page d-flex align-items-center">
+                    <p>Total Price : <strong>$"(@product.Price)  * (@product.Quantity)"  </strong></p>
+                </div>
+            </div>
+            <hr>
+            <div class="d-grid col-6 mx-auto">
+                <a href="checkout.html" class="go-check-out-btn btn btn-danger  text-nowrap">
+                    Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+}

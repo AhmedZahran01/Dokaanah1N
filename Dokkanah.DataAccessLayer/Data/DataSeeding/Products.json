@@ -1,0 +1,90 @@
+[
+  {
+    "Name": "Women's blouse 1",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/28/P00898453.jpg",
+    "Price": 29.99,
+    "Description": "Durable and stylish sneakers for kids.",
+    "Quantity": 20,
+    "CategoryId": 2
+  },
+  {
+    "Name": "Women's blouse 2",
+    "Price": 59.99,
+    "Description": "Stylish leather handbag for women.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/fb/P00825308.jpg",
+    "Quantity": 15,
+    "CategoryId": 2
+  },
+  {
+    "Name": "Women's blouse 3",
+    "Price": 24.99,
+    "Description": "Stylish sunglasses for women.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/56/P00887345.jpg",
+    "Quantity": 35,
+    "CategoryId": 2
+  },
+  {
+    "Name": "Women's blouse 4",
+    "Price": 49.99,
+    "Description": "Elegant evening dress for women.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/68/P00966676.jpg",
+    "Quantity": 30,
+    "CategoryId": 2
+  },
+  {
+    "Name": "Men's T-Shirt 1",
+    "Price": 19.99,
+    "Description": "Comfortable cotton T-shirt for men.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/9a/P00951479.jpg",
+    "Quantity": 50,
+    "CategoryId": 1
+  },
+  {
+    "Name": "Men's T-Shirt 2",
+    "Price": 69.99,
+    "Description": "Comfortable running shoes for men.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/be/P01011685.jpg",
+    "Quantity": 12,
+    "CategoryId": 1
+  },
+  {
+    "Name": "Men's T-Shirt 3",
+    "Price": 39.99,
+    "Description": "Classic denim jeans for men.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/fe/P00951082.jpg",
+    "Quantity": 40,
+    "CategoryId": 1
+  },
+  {
+    "Name": "Men's T-Shirt 4",
+    "Price": 99.99,
+    "Description": "Elegant wristwatch for men.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/b5/P01006830.jpg",
+    "Quantity": 10,
+    "CategoryId": 1
+  },
+  {
+    "Name": "Kids' Clothes 1",
+    "Price": 34.99,
+    "Description": "Warm and cozy jacket for kids.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/d9/P01029992_d4.jpg",
+    "Quantity": 25,
+    "CategoryId": 3
+  },
+  {
+    "Name": "Kids' Clothes 2",
+    "Price": 19.99,
+    "Description": "Fun and educational toy set for kids.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/3e/P01002806.jpg",
+    "Quantity": 50,
+    "CategoryId": 3
+  },
+  {
+    "Name": "Kids' Clothes 3",
+    "Price": 89.99,
+    "Description": "Elegant gold-plated necklace for women.",
+    "ImgUrl": "https://www.mytheresa.com/media/1094/1238/100/65/P01023937.jpg",
+    "Quantity": 8,
+    "CategoryId": 3
+  }
+]

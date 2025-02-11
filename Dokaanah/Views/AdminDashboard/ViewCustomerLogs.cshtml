@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Shared/noLayoutView.cshtml";
+      
+} 
+
+@* <div class="container">
+    <h2>User Login Logs</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Log Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model)
+            {
+                <tr>
+                    <td>@log</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> *@
+
+
+@model IEnumerable<string>
+
+<div class="container mt-5">
+    <h2>Customer Activity Logs</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Log Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model)
+            {
+                <tr>
+                    <td>@log</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,99 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Views/Shared/noLayoutView.cshtml";
+    var allCategory2 = (List<Category>)ViewBag.allCategory2;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                border-color: #bd2130;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Categories</h2>
+            <a class="btn btn-primary" asp-controller="Categories" asp-action="Create">Add New Category</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Icon</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in allCategory2)
+                    {
+                        <tr class="align-middle">
+                            <td>@item.Id</td>
+                            <td><strong>@item.Name</strong></td>
+                            <td>@item.Description</td>
+                            <td>
+                                <img src="~/images/General/@item.Icon" alt="Category Image" class="img-thumbnail" style="width: 50px; height: 50px;">
+                            </td>
+                            <td>
+                                <a class="btn btn-primary btn-sm me-2 edit-btn"
+                                   asp-controller="Categories" asp-action="Edit" asp-route-id="@item.Id">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-controller="Categories" asp-action="Delete" asp-route-id="@item.Id"
+                                   class="btn btn-danger btn-sm delete-btn" aria-label="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

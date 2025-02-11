@@ -1,0 +1,143 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "Customers";
+
+    Layout = "~/Views/Shared/noLayoutView.cshtml";
+
+    var allCustomers2 = (List<Customer>)ViewBag.allCustomers;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                border-color: #bd2130;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Customers</h2>
+            <a class="btn btn-primary" asp-controller="Customers" asp-action="CreateByAdmin">Add New Customer</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Address </th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="userList">
+                    @foreach (var customer in allCustomers2)
+                    {
+                        <tr data-user-id="@customer.Id">
+                            <td>@customer.Id</td>
+                            <td>@customer.UserName</td>
+                            <td>@customer.Email</td>
+                            <td class="status-cell">
+                                @if (customer.IsOnline)
+
+
+
+                                {
+                                    <span class="badge bg-success">Online</span>
+                                }
+
+
+
+                                else
+
+
+
+                                {
+                                    <span class="badge bg-danger">Offline</span>
+                                }
+                            </td>
+                            <td>@customer.Address</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" asp-controller="Customers" asp-action="EditByAdmin" asp-route-id="@customer.Id">Edit</a>
+                                <a class="btn btn-danger btn-sm" asp-controller="Customers" asp-action="Delete" asp-route-id="@customer.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/@@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+
+    <script>
+        var connection = new signalR.HubConnectionBuilder()
+            .withUrl("/userHub") // URL للـ SignalR Hub
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+
+        // بدء الاتصال
+        connection.start().then(() => {
+            console.log("SignalR connected.");
+        }).catch(err => console.error("SignalR connection error: ", err));
+
+        // الاستماع لتحديث الحالة
+        connection.on("ReceiveUserStatus", (userId, status) => {
+            const userRow = document.querySelector(`[data-user-id="${userId}"]`);
+            if (userRow) {
+                const statusCell = userRow.querySelector(".status-cell");
+                if (status === "Online") {
+                    statusCell.innerHTML = '<span class="badge bg-success">Online</span>';
+                } else {
+                    statusCell.innerHTML = '<span class="badge bg-danger">Offline</span>';
+                }
+            }
+        });
+    </script>
+
+
+
+</body>

@@ -1,0 +1,538 @@
+﻿@model Dokaanah.Models.Product
+
+@{
+    ViewData["Title"] = "ProductDetails";
+    // var ProductInView = (Product) ViewBag.productDatails ;
+
+}
+
+<div class="BreadcrumbStart">
+    <div class="BreadcrumbS_Wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Shop</h2>
+                        <nav class="bradcaump-inner">
+                            <a class="breadcrumb-item" asp-controller="Home" asp-action="index">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb-item active">Details</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col container productDetailsss">
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="border rounded">
+                <a href="#">
+                    <img src="@Model.ImgUrl" class="img-fluid rounded" alt="Image">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h4 class="fw-bold mb-3">@Model.Name</h4>
+            <p class="mb-3"> </p>
+            <h5 class="fw-bold mb-3">@Model.Price $</h5>
+            <div class="d-flex mb-4">
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa fa-star"></i>
+            </div>
+           
+                 
+                    <p class="mb-3">Category : @Model.Category </p>
+                 
+            
+            <p class="mb-4 text-truncate">
+                @Model.Description <br /> <br />
+                
+            </p>
+         @*    <div class="input-group quantity-detail mb-5" style="width: 100px;">
+                <div class="input-group-btn">
+                    <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                <div class="input-group-btn">
+                    <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div> *@
+            <a onclick="alert('Your item is add to your card')" asp-controller="CartProduct" asp-action="AddProductToCarttoshop" asp-route-id="@Model.Id" class="btn  btn-dark border  rounded-pill px-4 py-2 mb-4 add-cart-btnnn ">
+                <i class="fa-solid fa-cart-plus add-cart-btnnn"></i>
+                Add to cart
+            </a>
+            <a  class="btn border btn-danger rounded-pill px-4 py-2 mb-4 "> Buy Now</a>
+        </div>
+        <div class="col-lg-12">
+            <nav>
+                <div class="nav nav-tabs mb-3">
+                    <button class="nav-link active  " type="button" role="tab" id="nav-about-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-about" aria-controls="nav-about" aria-selected="true">
+                        Description
+                    </button>
+                    <button class="nav-link " type="button" role="tab" id="nav-mission-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-mission" aria-controls="nav-mission" aria-selected="false">
+                        Reviews
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content mb-5">
+                <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                    <p>
+                       @Model.Description
+                    </p>
+
+                </div>
+                <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
+
+                    <div class="d-flex flex-column">
+
+                        <div class="d-flex flex-column">
+                            <h5>Ahmed</h5>
+                            <div class="d-flex mb-3">
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-dark">Great xcnm,nvlknvlkodsjfopdsfjp </p>
+
+                    </div>
+                    <div class="d-flex flex-column">
+
+                        <div class="d-flex flex-column">
+                            <h5>Ahmed</h5>
+                            <div class="d-flex mb-3">
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-dark">Great xcnm,nvlknvlkodsjfopdsfjp </p>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="nav-vision" role="tabpanel">
+                    <p class="text-dark">
+                        Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                        amet diam et eos labore. 3
+                    </p>
+                    <p class="mb-0">
+                        Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
+                        Clita erat ipsum et lorem et sit
+                    </p>
+                </div>
+            </div>
+        </div>
+        <form action="#">
+            <h4 class="mb-5 fw-bold">Leave a Reply</h4>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="border-bottom rounded">
+                        <input type="text" class="form-control border-0 me-4" placeholder="Yur Name *">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="border-bottom rounded my-4">
+                        <textarea name="reviewarea" id="reviewarea" class="form-control border-0" cols="30" rows="3"
+                                  placeholder="Your Review *" spellcheck="false"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="d-flex justify-content-between py-3 mb-5">
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 me-3">Rate</p>
+                            <div class="d-flex align-items-center" style="font-size: 12px;">
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-dark rounded-pill px-4 py-3"> Submit </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- ===================================================Related Products========================================================================== -->
+@* <div class="top-seller-product m-5 wow fadeInDown">
+    <div class="container display-header   pb-4">
+        <h3 class="mt-3 text-center fw-bold">Related Products</h3>
+        <hr class="hr-btm mx-auto">
+    </div>
+
+
+
+    <div class="swiper Bolla container">
+        <div class="swiper-wrapper" id="slider-top-selled">
+            <!-- Product cards -->
+            <div class="swiper-slide">
+                <div class="col">
+                    <div class="product-item hover-effect-slide">
+                        <div class="image-holder position-relative">
+                            <img src="~/images/prod/4.jpg" alt="Blouse" class="product-image img-fluid">
+                            <a href="productDetails.html" class="btn-icon btn-eye-con">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <span class="btn btn-dark w-100 mt-2 rounded-3 add-cart-btnnn">
+                                Add
+                                to cart
+                            </span>
+                        </div>
+                        <div class="product-content position-relative">
+                            <h5 class="product-name text-uppercase fs-5 mt-3">
+                                <a href="single-product.html">Jacket</a>
+                            </h5>
+                            <div class="product-price">
+                                <span class="new-price">$185</span>
+                                <span class="old-price">$225</span>
+                            </div>
+                            <div class="product-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Cardooo -->
+            <div class="swiper-slide">
+                <div class="col">
+                    <div class="product-item hover-effect-slide">
+                        <div class="image-holder position-relative">
+                            <img src="~/images/prod/1000.jpg" alt="Blouse" class="product-image img-fluid">
+                            <a href="productDetails.html" class="btn-icon btn-eye-con">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <span class="btn btn-dark w-100 mt-2 rounded-3 add-cart-btnnn">
+                                Add
+                                to cart
+                            </span>
+                        </div>
+                        <div class="product-content position-relative">
+                            <h5 class="product-name text-uppercase fs-5 mt-3">
+                                <a href="single-product.html">Skirt</a>
+                            </h5>
+                            <div class="product-price">
+                                <span class="new-price">$185</span>
+                                <span class="old-price">$225</span>
+                            </div>
+                            <div class="product-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- third Card ooo -->
+            <div class="swiper-slide">
+                <div class="col">
+                    <div class="product-item hover-effect-slide">
+                        <div class="image-holder position-relative">
+                            <img src="~/images/prod/10.jpg" alt="Blouse" class="product-image img-fluid">
+                            <a href="#" class="btn-icon btn-eye-con">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <span class="btn btn-dark w-100 mt-2 rounded-3 add-cart-btnnn">
+                                Add
+                                to cart
+                            </span>
+                        </div>
+                        <div class="product-content position-relative">
+                            <h5 class="product-name text-uppercase fs-5 mt-3">
+                                <a href="single-product.html">Shirt</a>
+                            </h5>
+                            <div class="product-price">
+                                <span class="new-price">$185</span>
+                                <span class="old-price">$225</span>
+                            </div>
+                            <div class="product-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fourth Card -->
+            <!-- more if i wanted -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+</div>
+ 
+
+
+
+ @* //=========================================================new region ======================================== *@
+@* 
+ @model Dokaanah.Models.Product
+
+@{
+    ViewData["Title"] = "ProductDetails";
+}
+
+<div class="BreadcrumbStart">
+    <div class="BreadcrumbS_Wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Shop</h2>
+                        <nav class="bradcaump-inner">
+                            <a class="breadcrumb-item" href="index.html">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb-item active">Details</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col container productDetailsss">
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="border rounded">
+                <a href="#">
+                    <img src="@Model.ImgUrl" class="img-fluid rounded" alt="Image">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h4 class="fw-bold mb-3">@Model.Name</h4>
+            <p class="mb-3"> </p>
+            <h5 class="fw-bold mb-3">@Model.Price $</h5>
+            <div class="d-flex mb-4">
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                <i class="fa fa-star"></i>
+            </div>
+
+            @foreach (var categoryName in ViewBag.CategoryNames)
+            {
+                <p class="mb-3">Category: @categoryName</p>
+            }
+
+            <p class="mb-4 text-truncate">
+                @Model.Description <br /> <br />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ullam illum quos eius
+                magnam corrupti laudantium eligendi eum non, provident neque omnis perspiciatis consequuntur minima harum? Vel
+                commodi vero illum..
+            </p>
+            <div class="input-group quantity-detail mb-5" style="width: 100px;">
+                <div class="input-group-btn">
+                    <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                <div class="input-group-btn">
+                    <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <a asp-controller="CartProduct" asp-action="AddProductToCart" asp-route-id="@Model.Id" class="btn  btn-dark border  rounded-pill px-4 py-2 mb-4 add-cart-btnnn ">
+                <i class="fa-solid fa-cart-plus add-cart-btnnn"></i>
+                Add to cart
+            </a>
+            <a href="checkout.html" class="btn border btn-danger rounded-pill px-4 py-2 mb-4 "> Buy Now</a>
+        </div>
+        <div class="col-lg-12">
+            <nav>
+                <div class="nav nav-tabs mb-3">
+                    <button class="nav-link active  " type="button" role="tab" id="nav-about-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-about" aria-controls="nav-about" aria-selected="true">
+                        Description
+                    </button>
+                    <button class="nav-link " type="button" role="tab" id="nav-mission-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-mission" aria-controls="nav-mission" aria-selected="false">
+                        Reviews
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content mb-5">
+                <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim eaque, veritatis, animi quos voluptatum
+                        aperiam nesciunt nihil quae aliquid veniam reiciendis repellat dolorem qui accusamus, ipsum quis placeat
+                        id asperiores.
+                    </p>
+
+                </div>
+                <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
+
+                    <div class="d-flex flex-column">
+
+                        <div class="d-flex flex-column">
+                            <h5>Ahmed</h5>
+                            <div class="d-flex mb-3">
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-dark">Great xcnm,nvlknvlkodsjfopdsfjp </p>
+
+                    </div>
+                    <div class="d-flex flex-column">
+
+                        <div class="d-flex flex-column">
+                            <h5>Ahmed</h5>
+                            <div class="d-flex mb-3">
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-dark">Great xcnm,nvlknvlkodsjfopdsfjp </p>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="nav-vision" role="tabpanel">
+                    <p class="text-dark">
+                        Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                        amet diam et eos labore. 3
+                    </p>
+                    <p class="mb-0">
+                        Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
+                        Clita erat ipsum et lorem et sit
+                    </p>
+                </div>
+            </div>
+        </div>
+        <form action="#">
+            <h4 class="mb-5 fw-bold">Leave a Reply</h4>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="border-bottom rounded">
+                        <input type="text" class="form-control border-0 me-4" placeholder="Yur Name *">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="border-bottom rounded my-4">
+                        <textarea name="reviewarea" id="reviewarea" class="form-control border-0" cols="30" rows="3"
+                                  placeholder="Your Review *" spellcheck="false"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="d-flex justify-content-between py-3 mb-5">
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0 me-3">Rate</p>
+                            <div class="d-flex align-items-center" style="font-size: 12px;">
+                                <i class="fa-solid fa-star" style="color: #eba000;"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-dark rounded-pill px-4 py-3"> Submit </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- ===================================================Related Products========================================================================== -->
+<div class="top-seller-product m-5 wow fadeInDown">
+    <div class="container display-header   pb-4">
+        <h3 class="mt-3 text-center fw-bold">Related Products</h3>
+        <hr class="hr-btm mx-auto">
+    </div>
+    <div class="top-seller-product m-5 wow fadeInDown">
+        <div class="swiper Bolla container">
+            <div class="swiper-wrapper" id="slider-top-selled">
+                <!-- Product cards -->
+                @foreach (var product in (List<Dokaanah.Models.Product>)ViewData["OtherProducts"])
+                {
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="product-item hover-effect-slide">
+                                <div class="image-holder position-relative">
+                                    <img src="@product.ImgUrl" alt="Blouse" class="product-image img-fluid">
+                                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="btn-icon btn-eye-con">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <span class="btn btn-dark w-100 mt-2 rounded-3 add-cart-btnnn">Add to cart</span>
+                                </div>
+                                <div class="product-content position-relative">
+                                    <h5 class="product-name text-uppercase fs-5 mt-3">
+                                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">@product.Name</a>
+                                    </h5>
+                                    <div class="product-price">
+                                        <span class="new-price">$@product.Price</span>
+                                        <span class="old-price">$@((@product.Price) * (1.75))</span>
+                                    </div>
+                                    <div class="product-star">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+
+
+
+ *@

@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Men",
+    "Description": "All products for men, including clothing, accessories, and more.",
+    "Icon": "men_icon.png"
+  },
+  {
+    "Name": "Women",
+    "Description": "All products for women, including clothing, accessories, and more.",
+    "Icon": "women_icon.png"
+  },
+  {
+    "Name": "Kids",
+    "Description": "All products for kids, including clothing, toys, and more.",
+    "Icon": "kids_icon.png"
+  }
+]

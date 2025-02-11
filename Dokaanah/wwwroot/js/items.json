@@ -1,0 +1,63 @@
+
+    
+[
+    {
+      "id": 0,
+      "img": "images/prod/1000.jpg",
+      "img_hover": "images/product/1000.jpg",
+      "name": "Blouse",
+      "price": 185,
+      "old_price": 225
+    },
+    {
+      "id": 1,
+      "img": "images/prod/1000.jpg",
+      "img_hover": "images/product/1000.jpg",
+      "name": "Shirt",
+      "price": 100,
+      "old_price": 120
+    },
+    {
+      "id": 2,
+      "img": "images/prod/1000.jpg",
+      "img_hover": "images/product/1000.jpg",
+      "name": "Any",
+      "price": 140,
+      "old_price": 200
+    }
+    ,
+    {
+      "id": 2,
+      "img": "images/prod/1000.jpg",
+      "img_hover": "images/product/1000.jpg",
+      "name": "Any",
+      "price": 140,
+      "old_price": 200
+    },
+    {
+      "id": 0,
+      "img": "images/prod/1000.jpg",
+      "img_hover": "images/product/1000.jpg",
+      "name": "Blouse",
+      "price": 185,
+      "old_price": 225
+    },
+    {
+      "id": 1,
+      "img": "images/prod/1000.jpg",
+      "img_hover": "images/product/1000.jpg",
+      "name": "Shirt",
+      "price": 100,
+      "old_price": 120
+    },
+    {
+      "id": 2,
+      "img": "images/prod/1000.jpg",
+      "img_hover": "images/product/1000.jpg",
+      "name": "Any",
+      "price": 140,
+      "old_price": 200
+    }
+  
+
+  ]

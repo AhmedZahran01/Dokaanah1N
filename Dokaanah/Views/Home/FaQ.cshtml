@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Frequantly Asked Questions";
+}
+<body>
+
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="index"><i class="fa-solid fa-house"></i></a></i></li>
+                <li class="breadcrumb-item active" aria-current="page">Faq</li>
+            </ul>
+        </nav>
+
+        <div class="row pt-6 pb-5">
+            <div class="col-12 col-lg-6 ge-3">
+                <img src="~/images/General/faq.png" class="img-fluid" alt="faq Questions">
+            </div>
+            <div class="col-12 col-lg-6 ">
+                <div class="row justify-content-xl-end">
+                    <div class="col-12 col-xl-11">
+                        <h2 class="h1 mb-5 text-center">How can we help you?</h2>
+                        <p class="lead fs-4 text-secondary mb-5 text-center">
+                            We hope you have found an answer to your
+                            question.
+                        </p>
+                        <div class="accordion accordion-flush" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        How Do I Pay Here?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>You Can Pay via paypal , Mastercard , Creditcard or Any online wallet </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Do We Have Offline Store?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Yes, we Have 2 Locations right now , in Mansoura and Port Said </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Can i Delete my Account ?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p> No, We will Work on that Soon </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>

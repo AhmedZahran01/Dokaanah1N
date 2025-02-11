@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "John Doe",
+    "Password": "P@ssw0rd123",
+    "confirmPassword": "P@ssw0rd123",
+    "PhoneNumber": "1234567890",
+    "Address": "123 Elm Street, Springfield",
+    "isAgree": true
+  }
+
+]

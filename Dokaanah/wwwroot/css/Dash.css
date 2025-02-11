@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dashboard-navb .nav-item h3{
+    font-family: "Pattaya", sans-serif;
+    font-weight: 500;
+    color: auto;
+}
+.dashboard-navb a {
+    text-decoration: none;
+    font-weight: 500;
+    color: rgba(27, 88, 201, 0.39);
+}
+.dashboard-navb a:hover{
+    color: chocolate;
+}
+  
+.row-fet {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+  @media (max-width:800px){
+    
+  }
+  
+  
+  .dash-count {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: #F6F5F2;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 25px;
+  }
+  
+  .dash-count-1:hover {
+    background: #77B0AA;
+  }
+  .dash-count-2:hover {
+    background: #5BBCFF;
+  }
+  .dash-count-3:hover {
+    background: #97E7E1;
+  }
+  
+  .dash-img-1,
+  .dash-img-2,
+  .dash-img-3 {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .dash-img-1 {
+    background: #FCFFE0;
+  }
+  
+  .dash-img-2 {
+    background: #F7C566;
+  }
+  
+  .dash-img-3 {
+    background: #8cabc0;
+  }
+  
+  .dash-count:hover i {
+    transform: scale(2);
+    transition: 0.4s ease;
+  }
+  
+  @media (max-width: 767px) {
+    .col-lg-4,
+    .col-md-6,
+    .col-12 {
+      flex: 0 0 auto;
+      width: auto;
+      flex-direction: column;
+    }
+  
+    .dash-count {
+      flex-direction: row;
+      gap: 10px;
+      padding: 15px;
+    }
+  
+    .dash-count-number {
+      text-align: left;
+    }
+  
+    .dash-img-1,
+    .dash-img-2,
+    .dash-img-3 {
+      padding: 15px;
+    }
+  }
+/* ----------- */
+.rounded-circle {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.badge {
+  font-size: 14px;
+}
