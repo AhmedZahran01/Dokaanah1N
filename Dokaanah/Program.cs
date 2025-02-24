@@ -15,7 +15,7 @@ namespace Dokaanah
 {
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static async Task Main(string[] args) 
         {
             #region App builder  Region
             var builder = WebApplication.CreateBuilder(args);
