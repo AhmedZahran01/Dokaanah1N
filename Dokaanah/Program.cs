@@ -96,7 +96,7 @@ namespace Dokaanah
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
                 options.Cookie.IsEssential = true;
             });
-
+              
             #endregion
 
             #region Application Region
